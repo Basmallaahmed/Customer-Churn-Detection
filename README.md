@@ -1,78 +1,92 @@
-🚀 Customer Churn Detection 📊
-🌟 Introduction
+# 🚀 Customer Churn Detection 📊
+
+## 🌟 Introduction
 Predicting customer churn is a crucial task for businesses to retain customers and reduce revenue loss. This project leverages historical customer data to build a machine learning model that predicts whether a customer is likely to churn (exit) or stay. These insights empower businesses to take proactive measures to retain at-risk customers.
 
-📂 Dataset Overview
-Source: Churn_Modelling.csv
-Features:
-CreditScore: Customer's credit score.
-Geography: Customer location.
-Gender: Gender of the customer.
-Age: Customer's age.
-Tenure: Number of years with the company.
-Balance: Account balance.
-NumOfProducts: Number of products the customer uses.
-HasCrCard: Has a credit card (1 = Yes, 0 = No).
-IsActiveMember: Active customer status (1 = Yes, 0 = No).
-EstimatedSalary: Annual estimated salary.
-Exited (Target): 1 = Churned, 0 = Retained.
-🛠️ Steps of the Project
-🔍 Loading the Dataset
+---
 
-Imported the dataset using pandas and performed exploratory analysis.
-📊 Data Visualization
+## 📂 Dataset Overview
+- **Source**: `Churn_Modelling.csv`
+- **Features**:
+  - **CreditScore**: Customer's credit score.
+  - **Geography**: Customer location.
+  - **Gender**: Gender of the customer.
+  - **Age**: Customer's age.
+  - **Tenure**: Number of years with the company.
+  - **Balance**: Account balance.
+  - **NumOfProducts**: Number of products the customer uses.
+  - **HasCrCard**: Has a credit card (1 = Yes, 0 = No).
+  - **IsActiveMember**: Active customer status (1 = Yes, 0 = No).
+  - **EstimatedSalary**: Annual estimated salary.
+  - **Exited** (Target): 1 = Churned, 0 = Retained.
 
-Visualized feature distributions (e.g., age, balance) and relationships between features using Matplotlib and Seaborn.
-Generated a correlation heatmap to understand feature interactions.
-🧹 Data Cleaning and Feature Engineering
+---
 
-Encoded categorical variables (e.g., Gender and Geography) using one-hot encoding.
-Removed irrelevant columns (e.g., RowNumber, CustomerId, Surname).
-📂 Data Splitting
+## 🛠️ Steps of the Project
 
-Split the dataset into training (80%) and testing (20%) subsets.
-⚖️ Handling Imbalanced Data
+1. **🔍 Loading the Dataset**
+   - Imported the dataset using pandas and performed exploratory analysis.
 
-Applied SMOTE (Synthetic Minority Oversampling Technique) to balance the target variable.
-📐 Feature Scaling
+2. **📊 Data Visualization**
+   - Visualized feature distributions (e.g., age, balance) and relationships between features using Matplotlib and Seaborn.
+   - Generated a correlation heatmap to understand feature interactions.
 
-Standardized numerical features using StandardScaler to ensure consistency across algorithms.
-🤖 Model Training and Evaluation
+3. **🧹 Data Cleaning and Feature Engineering**
+   - Encoded categorical variables (e.g., `Gender` and `Geography`) using one-hot encoding.
+   - Removed irrelevant columns (e.g., `RowNumber`, `CustomerId`, `Surname`).
 
-Trained four machine learning models:
-K-Nearest Neighbors (KNN)
-Naive Bayes
-Support Vector Machine (SVM)
-Decision Tree (DT)
-Evaluated the models using:
-Accuracy
-Precision
-Recall
-F1-Score
-ROC-AUC
-🏆 Results and Insights
+4. **📂 Data Splitting**
+   - Split the dataset into training (80%) and testing (20%) subsets.
 
-Compared the performance of all models and identified the best-performing one.
-🎯 Results and Findings
-🧠 Model	🎯 Accuracy	🔍 Precision	🔁 Recall	📊 F1-Score	📈 ROC-AUC
-KNN	84%	82%	78%	80%	0.85
-Naive Bayes	82%	80%	76%	78%	0.83
-SVM	85%	83%	81%	82%	0.86
-Decision Tree	88%	86%	85%	85%	0.89
-✨ Key Insights
-The Decision Tree model outperformed others with the highest accuracy and F1-score.
-Balancing the dataset using SMOTE improved model performance significantly.
-Visualization tools provided valuable insights into customer behavior and churn patterns.
-📊 Visualizations
-Feature Correlation Heatmap
-Shows how features like Age, Balance, and Geography correlate with churn.
-Target Distribution
-Displays the class imbalance before and after applying SMOTE.
-ROC Curve
-Compares model performance using ROC-AUC scores.
+5. **⚖️ Handling Imbalanced Data**
+   - Applied SMOTE (Synthetic Minority Oversampling Technique) to balance the target variable.
 
-9. **Results and Findings**  
-   - Decision Tree provided the highest accuracy and F1-score, making it the best-performing model.
+6. **📐 Feature Scaling**
+   - Standardized numerical features using `StandardScaler` to ensure consistency across algorithms.
 
-10. **Deployment and Conclusion**  
-   - The trained Decision Tree model can now predict whether a customer is likely to churn or not.
+7. **🤖 Model Training and Evaluation**
+   - Trained four machine learning models:
+     - **K-Nearest Neighbors (KNN)**
+     - **Naive Bayes**
+     - **Support Vector Machine (SVM)**
+     - **Decision Tree (DT)**
+   - Evaluated the models using:
+     - **Accuracy**
+     - **Precision**
+     - **Recall**
+     - **F1-Score**
+     - **ROC-AUC**
+
+8. **🏆 Results and Insights**
+   - Compared the performance of all models and identified the best-performing one.
+
+---
+
+## 🎯 Results and Findings
+
+| 🧠 **Model**         | 🎯 **Accuracy** | 🔍 **Precision** | 🔁 **Recall** | 📊 **F1-Score** | 📈 **ROC-AUC** |
+|-----------------------|----------------|------------------|---------------|-----------------|----------------|
+| **KNN**              | 77.85%         | 46.60%           | 60.69%        | 52.72%          | 0.7754         |
+| **Naive Bayes**       | 75.40%         | 42.20%           | 56.51%        | 48.31%          | 0.7641         |
+| **SVM**              | 80.85%         | 52.42%           | 63.63%        | 57.94%          | 0.8390         |
+| **Decision Tree**     | 74.40%         | 40.80%           | 57.24%        | 47.64%          | 0.6801         |
+
+### ✨ Key Insights
+- **SVM** achieved the best performance overall, with the highest **Accuracy (80.85%)**, **F1-Score (57.94%)**, and **ROC-AUC (0.839)**, making it the best choice among the models evaluated.
+- While **KNN** performed decently with a good balance of metrics, it did not outperform SVM.
+- The **Naive Bayes** and **Decision Tree** models exhibited lower performance compared to the other algorithms, which indicates they may not be the best fit for this dataset without further tuning or additional features.
+
+
+---
+
+## 📊 Visualizations
+1. **Feature Correlation Heatmap**  
+   - Shows how features like `Age`, `Balance`, and `Geography` correlate with churn.
+2. **Target Distribution**  
+   - Displays the class imbalance before and after applying SMOTE.
+3. **ROC Curve**  
+   - Compares model performance using ROC-AUC scores.
+
+---
+
+
